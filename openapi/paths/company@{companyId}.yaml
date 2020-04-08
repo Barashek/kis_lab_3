@@ -1,0 +1,67 @@
+get:
+  summary: "Get Company"
+  description: "Request for Company information"
+  operationId: "getCompany"
+  tags:
+    - Company
+  parameters:
+    - $ref: ../components/parameters/CompanyId.yaml
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: "../components/schemas/Company.yaml"
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+
+patch:
+  summary: "Update Company"
+  description: "Request for update information about a Company"
+  operationId: "updateCompany"
+  tags:
+    - Company
+  security: 
+  - bearerAuth: ['Company:update']
+  parameters:
+  - $ref: ../components/parameters/CompanyId.yaml
+  requestBody:
+    $ref: ../components/requestBodies/Company.yaml
+  responses:
+    '200':
+      description: Company was updated
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Company.yaml
+    '401':
+      $ref: ../components/responses/AccessForbidden.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '409':
+      $ref: ../components/responses/Conflict.yaml
+    '422':
+      $ref: ../components/responses/InvalidData.yaml
+
+delete:
+  summary: "Delete Company"
+  description: "Request for delete information about a Company"
+  operationId: "deleteCompany"
+  tags:
+    - Company
+  security: 
+  - bearerAuth: ['Company:delete']
+  parameters:
+  - $ref: ../components/parameters/CompanyId.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/Deleted.yaml
+    '401':
+      $ref: ../components/responses/AccessForbidden.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '409':
+      $ref: ../components/responses/Conflict.yaml
+    '422':
+      $ref: ../components/responses/InvalidData.yaml

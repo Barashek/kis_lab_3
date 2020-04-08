@@ -1,0 +1,16 @@
+{
+  "name": "kis3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "barashek <uictoriam1367@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "openapi preview-docs",
+    "build": "openapi bundle -o dist",
+    "test": "openapi validate"
+  },
+  "dependencies": {
+    "@redocly/openapi-cli": "^0.11.0"
+  },
+  "repository": "https://github.com/Barashek/kis_lab_3.git"
+}

@@ -1,0 +1,7 @@
+name: companyId
+in: path
+description: >-
+  Company identifier
+schema:
+  $ref: ../schemas/ResourceId.yaml
+required: true

@@ -1,0 +1,17 @@
+type: object
+properties:
+  title:
+    type: string
+    description: Title of Company
+  description:
+    type: string
+    description: Description of Company
+required:
+  - title
+example:   
+  title: Google
+  description: >-
+    Google is a multinational, publicly-traded organization 
+    built around the company's hugely popular search engine.
+    Google's other enterprises include Internet analytics, cloud computing,
+    advertising technologies, and Web app, browser and operating system development.

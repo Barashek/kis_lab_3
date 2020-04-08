@@ -1,0 +1,25 @@
+openapi: 3.0.0
+info:
+  version: '1.0'
+  title: REST API
+  contact:
+    name: Victoria Rostovskaya
+    email: uictoriam1367@gmail.com
+servers:
+  - url: 'https://hh.com/v1.0'
+    description: Live Server
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT 
+paths:
+  /auth:
+    $ref: './paths/auth.yaml'
+  '/company/{companyId}':
+    $ref: './paths/company@{companyId}.yaml'
+  '/company':
+    $ref: './paths/company.yaml'
+  '/companies':
+    $ref: './paths/companies.yaml'

@@ -1,0 +1,17 @@
+get:
+  summary: "Get Companies"
+  description: "Request for a list of Companies"
+  operationId: "getCompanies"
+  tags:
+    - Company
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "../components/schemas/Company.yaml"
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
