@@ -1,0 +1,47 @@
+type: object
+properties:
+  title:
+    type: string
+    description: Vacancy Title
+  description:
+    type: string
+    description: Vacancy Description
+  minSalary:
+    type: number
+    format: float
+    description: Minimum wage threshold for a vacancy
+    minimum: 0
+  maxSalary:
+    type: number
+    format: float
+    description: Maximum wage threshold for a vacancy
+    minimum: 0
+  minExperience:
+    type: integer
+    description: Minimum experience for a vacancy
+    minimum: 0
+  maxExperience:
+    type: integer
+    description: Maximum experience for a vacancy
+    minimum: 0
+  companyId:
+    minimum: 1
+    type: integer
+    description: Company Identifier
+required:
+  - title
+  - minSalary
+  - minExperience
+  - companyId
+example:   
+  title: Junior web developer
+  description: >-
+    Junior Web Developer / Full Stack Engineer (PHP JavaScript SQL Web).
+    World-leading cyber security organisation is seeking a Junior Web Developer
+    to join their 1000-strong international team and help protect the world
+    against the growing number of adversaries in cyber space.
+  minSalary: 450
+  maxSalary: 700
+  minExperience: 1
+  maxExperience: 3
+  companyId: 1523

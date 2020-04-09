@@ -1,13 +1,13 @@
 post:
-  summary: "Create Company"
-  description: "Request for create new Company"
-  operationId: "postCompany"
+  summary: "Create Vacancy"
+  description: "Request for create new Vacancy"
+  operationId: "postVacancy"
   tags:
-    - Company
+    - Vacancy
   security: 
-    - bearerAuth: ['Company:create']
+    - bearerAuth: ['Vacancy:create']
   requestBody:
-    $ref: ../components/requestBodies/Company.yaml
+    $ref: ../components/requestBodies/Vacancy.yaml
   responses:
     '201':
       $ref: '../components/responses/Created.yaml'

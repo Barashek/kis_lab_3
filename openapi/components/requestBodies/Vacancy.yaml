@@ -1,0 +1,6 @@
+content:
+  application/json:
+    schema:
+      $ref: ../schemas/Vacancy.yaml
+description: Vacancy object
+required: true

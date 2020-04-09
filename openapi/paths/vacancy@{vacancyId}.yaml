@@ -1,0 +1,67 @@
+get:
+  summary: "Get Vacancy"
+  description: "Request for Vacancy information"
+  operationId: "getVacancy"
+  tags:
+    - Vacancy
+  parameters:
+    - $ref: ../components/parameters/VacancyId.yaml
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            $ref: "../components/schemas/Vacancy.yaml"
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
+
+patch:
+  summary: "Update Vacancy"
+  description: "Request for update information about a Vacancy"
+  operationId: "updateVacancy"
+  tags:
+    - Vacancy
+  security: 
+  - bearerAuth: ['Vacancy:update']
+  parameters:
+  - $ref: ../components/parameters/VacancyId.yaml
+  requestBody:
+    $ref: ../components/requestBodies/Vacancy.yaml
+  responses:
+    '200':
+      description: Vacancy was updated
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Vacancy.yaml
+    '401':
+      $ref: ../components/responses/AccessForbidden.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '409':
+      $ref: ../components/responses/Conflict.yaml
+    '422':
+      $ref: ../components/responses/InvalidData.yaml
+
+delete:
+  summary: "Delete Vacancy"
+  description: "Request for delete information about a Vacancy"
+  operationId: "deleteVacancy"
+  tags:
+    - Vacancy
+  security: 
+  - bearerAuth: ['Vacancy:delete']
+  parameters:
+  - $ref: ../components/parameters/VacancyId.yaml
+  responses:
+    '200':
+      $ref: ../components/responses/Deleted.yaml
+    '401':
+      $ref: ../components/responses/AccessForbidden.yaml
+    '404':
+      $ref: ../components/responses/NotFound.yaml
+    '409':
+      $ref: ../components/responses/Conflict.yaml
+    '422':
+      $ref: ../components/responses/InvalidData.yaml

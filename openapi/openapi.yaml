@@ -6,7 +6,7 @@ info:
     name: Victoria Rostovskaya
     email: uictoriam1367@gmail.com
 servers:
-  - url: 'https://hh.com/v1.0'
+  - url: 'https://victimtail.com/v1.0'
     description: Live Server
 components:
   securitySchemes:
@@ -17,9 +17,19 @@ components:
 paths:
   /auth:
     $ref: './paths/auth.yaml'
-  '/company/{companyId}':
-    $ref: './paths/company@{companyId}.yaml'
   '/company':
     $ref: './paths/company.yaml'
+  '/company/{companyId}':
+    $ref: './paths/company@{companyId}.yaml'
   '/companies':
     $ref: './paths/companies.yaml'
+  '/company/{companyId}/vacancies':
+    $ref: './paths/company@{companyId}@vacancies.yaml'
+  '/vacancy':
+    $ref: './paths/vacancy.yaml'
+  '/vacancy/{vacancyId}':
+    $ref: './paths/vacancy@{vacancyId}.yaml'
+
+
+
+ 

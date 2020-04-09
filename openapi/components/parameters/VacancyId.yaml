@@ -1,0 +1,7 @@
+name: vacancyId
+in: path
+description: >-
+  Vacancy identifier
+schema:
+  $ref: ../schemas/ResourceId.yaml
+required: true

@@ -1,0 +1,19 @@
+get:
+  summary: "Get Company Vacancies"
+  description: "Request for a list of Company Vacancies"
+  operationId: "getCompanyVacancies"
+  tags:
+    - Company
+  parameters:
+    - $ref: ../components/parameters/CompanyId.yaml
+  responses:
+    '200':
+      description: Successful operation
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "../components/schemas/Vacancy.yaml"
+    '404':
+      $ref: '../components/responses/NotFound.yaml'
